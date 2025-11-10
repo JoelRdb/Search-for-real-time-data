@@ -1,0 +1,129 @@
+/* Conteneur principal */
+.profile-view-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 20px;
+  background-color: #f5f7fa;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+/* Card contenant tout */
+.profile-view-container > .card:first-child {
+  width: 100%;
+  max-width: 1050px;
+  background-color: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Formulaire de recherche */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.search-container .search-title {
+  font-weight: 600;
+  font-size: 16px;
+  color: #111827;
+}
+
+.search-container .field {
+  flex: 1;
+  position: relative;
+}
+
+.search-container .field input {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.search-container .field input:focus {
+  border-color: #35bb72;
+  box-shadow: 0 0 5px rgba(53, 187, 114, 0.4);
+  outline: none;
+}
+
+.search-container .field label.floating {
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  font-size: 12px;
+  padding: 0 5px;
+  color: #6b7280;
+}
+
+/* Card interne pour le tableau */
+.profile-view-container > .card > .card {
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+  overflow-x: auto;
+}
+
+/* Tableau */
+.profile-view-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.profile-view-container table th,
+.profile-view-container table td {
+  text-align: left;
+  padding: 12px 15px;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.profile-view-container table tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.profile-view-container table tr:hover {
+  background-color: #e6f4ea;
+}
+
+/* Images et badges (si tu en ajoutes plus tard) */
+.profile-view-container table td img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.profile-view-container table td .availability-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.profile-view-container table td .availability-badge.available {
+  color: #027A48;
+  background-color: #ECFDF3;
+}
+
+.profile-view-container table td .availability-badge.unavailable {
+  color: #6b7280;
+  background-color: #F3F4F6;
+}

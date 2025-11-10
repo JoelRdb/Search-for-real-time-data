@@ -1,0 +1,52 @@
+<div class="profile-view-container container">
+
+        <form class="search-container" [formGroup] = "search">
+            <span class="search-title">Recherche</span>
+            <div class="field">
+                <label for="id" class="floating">Identifiant</label>
+                <input class="" type="text" id="id" formControlName="id">
+            </div>
+            <div class="field">
+                <label for="name" class="floating">Name</label>
+                <input class="" type="text" id="name" formControlName="name">
+            </div>
+            <div class="field">
+                <label for="summary" class="floating">Summary</label>
+                <input class="" type="text" id="summary" formControlName="summary">
+            </div>
+            <div class="field">
+                <label for="price" class="floating">Price</label>
+                <input class="" type="text" id="price" formControlName="price">
+            </div>
+        </form>
+
+<div class="card row" style="height: 600px; display: flex; flex-direction: column;">
+  <div class="table-responsive" style="flex: 1 1 auto; overflow-y: auto; ">
+    <table class="table table-striped table-hover">
+      <thead class="table-light sticky-top">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Summary</th>
+          <th>Description</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of listeProduct$ | async">
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.summary }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price }}</td>
+        </tr>
+        <tr *ngIf="(listeProduct$ | async)?.length === 0">
+          <td colspan="5" class="text-center">Aucun résultat</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>        
+</div>
+
+<p>Pour apprendre Observable</p>
